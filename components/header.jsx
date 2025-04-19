@@ -17,6 +17,19 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleScroll = (e, href) => {
+    e.preventDefault();
+    if (href === "/") {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    setIsOpen(false);
+  };
+
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Skills", href: "#skills" },
@@ -32,7 +45,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/">
+            <Link href="/" onClick={(e) => handleScroll(e, "/")}>
               <span className="text-2xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
                 Sitanshu <span className="text-red-400">Lall</span>
               </span>
@@ -45,6 +58,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
+                onClick={(e) => handleScroll(e, item.href)}
                 className="text-gray-700 dark:text-gray-300 hover:text-red-400 dark:hover:text-red-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
               >
                 {item.name}
@@ -81,8 +95,8 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
+                onClick={(e) => handleScroll(e, item.href)}
                 className="block text-gray-700 dark:text-gray-300 hover:text-red-400 dark:hover:text-red-400 px-3 py-2 rounded-md text-base font-medium transition-colors duration-300"
-                onClick={() => setIsOpen(false)}
               >
                 {item.name}
               </Link>

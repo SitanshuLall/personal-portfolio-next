@@ -3,18 +3,17 @@ import { File, ArrowDown } from 'lucide-react'
 
 const Hero = () => {
   return (
-    <main className="pt-16 bg-white dark:bg-black transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-        <h2 className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-4 transition-colors duration-300">
+    <main className="min-h-screen pt-16 bg-white dark:bg-black transition-colors duration-300 flex items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center w-full">
+        <h2 className="text-2xl md:text-3xl text-gray-600 dark:text-gray-400 mb-4 transition-colors duration-300">
           Hello, World! 👋🏽
         </h2>
-        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
+        <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
           I'm Sitanshu <span className="text-red-400">Lall</span>
         </h1>
-        <h2 className="text-xl md:text-2xl max-w-xl mx-auto text-gray-600 dark:text-gray-400 mb-8 transition-colors duration-300">
-        An 🇮🇳 Software Engineer. <br />
-        Code, football, and fast cars — in that order.
-        
+        <h2 className="text-2xl md:text-3xl max-w-xl mx-auto text-gray-600 dark:text-gray-400 mb-8 transition-colors duration-300">
+          An 🇮🇳 Software Engineer. <br />
+          Code, football, and fast cars — in that order.
         </h2>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <a
