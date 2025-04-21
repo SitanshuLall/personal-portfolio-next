@@ -1,7 +1,16 @@
+"use client"
 import React from 'react'
 import { File, ArrowDown } from 'lucide-react'
 
 const Hero = () => {
+  const handleScroll = (e, href) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <main className="min-h-screen pt-16 bg-white dark:bg-black transition-colors duration-300 flex items-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center w-full">
@@ -27,6 +36,7 @@ const Hero = () => {
           </a>
           <a
             href="#projects"
+            onClick={(e) => handleScroll(e, "#projects")}
             className="flex items-center justify-center px-6 py-3 w-48 h-14 border border-gray-300 dark:border-gray-300 text-base font-medium rounded-md text-gray-700 dark:text-gray-300 bg-transparent hover:text-red-400 dark:hover:text-red-400 transition-colors duration-300"
           >
             <ArrowDown className="w-5 h-5 mr-2 flex-shrink-0" />
